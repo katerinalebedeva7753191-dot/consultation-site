@@ -1,78 +1,82 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Личная консультация — Катерина Лебедева</title>
-  <meta name="description" content="Энергетическая ясность за 60 минут. Личная консультация Катерины Лебедевой. Только 3 места. Оплата через Stripe.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Manrope', sans-serif;
-      background: radial-gradient(circle at top, #10001a, #000);
-      color: #f5f5f5;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 28px;
-      line-height: 1.4;
-      margin-bottom: 15px;
-    }
-    p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #c9c9c9;
-      margin-bottom: 20px;
-    }
-    .card {
-      max-width: 500px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 0 40px rgba(255, 0, 128, 0.3);
-      backdrop-filter: blur(15px);
-    }
-    .badge {
-      display: inline-block;
-      background: #400028;
-      color: #f9f9f9;
-      padding: 8px 18px;
-      border-radius: 25px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 18px;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(90deg, #ff0066, #ff4d00);
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 16px;
-      margin-top: 10px;
-      transition: 0.3s;
-    }
-    .btn-primary:hover {
-      opacity: 0.9;
-      transform: scale(1.05);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Личная консультация — Катерина Лебедева</title>
+<meta name="description" content="Личная энергетическая консультация: 60 минут ясности, фокус на результате, оплата через Stripe. Только 3 места.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0e;--text:#f7f7fb;--muted:#b6b6c1;--accent:#ff375f;--card:#141419;--edge:#23232a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+  .wrap{max-width:1120px;margin:0 auto;padding:20px}
+  .aura{position:fixed;inset:0;overflow:hidden;z-index:-1;
+    background:radial-gradient(1200px 800px at 50% -20%, rgba(255,55,95,.08), transparent 60%),
+               linear-gradient(180deg,#0b0b0e,#0d0d12 60%)}
+  .orb{position:absolute;filter:blur(70px);opacity:.6;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(255,55,95,.55), rgba(255,55,95,.15), transparent);
+    animation:float 18s ease-in-out infinite;mix-blend-mode:screen}
+  .orb.alt{background:radial-gradient(closest-side, rgba(255,140,180,.5), rgba(255,140,180,.12), transparent);animation-duration:22s}
+  .orb.blue{background:radial-gradient(closest-side, rgba(120,130,255,.45), rgba(120,130,255,.12), transparent);animation-duration:26s}
+  @keyframes float{0%{transform:translate3d(-10%,-5%,0) scale(1)}50%{transform:translate3d(10%,8%,0) scale(1.08)}100%{transform:translate3d(-10%,-5%,0) scale(1)}}
+  .hero{position:relative;padding:84px 20px 56px;border-radius:22px;overflow:hidden;
+    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(2px)}
+  .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,55,95,.12);
+    border:1px solid rgba(255,55,95,.35);padding:8px 14px;border-radius:999px;font-weight:600;letter-spacing:.2px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent)}
+  h1{margin:16px 0 10px;font-size:40px;line-height:1.12;letter-spacing:.2px}
+  .lead{color:var(--muted);max-width:760px;font-size:18px}
+  .pill{padding:8px 12px;border-radius:999px;background:#1b1b20;border:1px solid #26262d;font-size:14px;color:#eaeaf0;margin-right:6px}
+  .cta-row{margin-top:22px}
+  .btn-primary{display:inline-block;background:var(--accent);color:#fff;padding:14px 22px;border-radius:14px;
+    font-weight:800;letter-spacing:.3px;text-decoration:none;box-shadow:0 0 20px rgba(255,55,95,.3), inset 0 0 20px rgba(255,255,255,.08);transition:all .35s}
+  .btn-primary:hover{transform:translateY(-1px) scale(1.02);box-shadow:0 0 26px rgba(255,55,95,.5), inset 0 0 28px rgba(255,255,255,.12)}
+  .card{background:var(--card);border:1px solid var(--edge);border-radius:16px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.22);margin-top:24px}
+  .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .list li{display:flex;gap:10px;align-items:flex-start;background:#1a1a20;border:1px solid #26262d;padding:12px 12px;border-radius:12px}
+  .list .ok{width:10px;height:10px;border-radius:50%;background:#00d18f;margin-top:6px;box-shadow:0 0 10px rgba(0,209,143,.6)}
+  .footer{margin:36px 0 12px;color:#8e8e98;font-size:13px;text-align:center}
+</style>
 </head>
-
 <body>
-  <div class="card">
-    <div class="badge">🔴 Только 3 места · Оплата через Stripe</div>
-    <h1>Личная консультация:<br> энергетическая ясность за 60 минут</h1>
-    <p>Точно находим, где утекает твоя сила, закрываем сценарии дефицита и включаем состояние Творца. Без воды — чистая ясность и реальное смещение в поле.</p>
-    <a class="btn-primary" href="https://buy.stripe.com/test_4gw4h83mQ5N35bq4gg" target="_blank">Забронировать место</a>
+  <div class="aura">
+    <div class="orb" style="width:480px;height:480px;left:-8%;top:-6%"></div>
+    <div class="orb alt" style="width:520px;height:520px;right:-6%;top:10%"></div>
+    <div class="orb blue" style="width:620px;height:620px;left:20%;bottom:-10%"></div>
+  </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge"><span class="dot"></span> Только 3 места · Оплата через Stripe</div>
+      <h1>Личная консультация: энергетическая ясность за 60 минут</h1>
+      <p class="lead">Находим, где утекает твоя сила, закрываем сценарии дефицита и включаем состояние Творца.</p>
+      <div class="pill">Онлайн · Zoom</div>
+      <div class="pill">60 минут чистого фокуса</div>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://buy.stripe.com/cNiaERda8fDt1nH5Jd1sQ02" target="_blank" rel="noopener">Оплатить сейчас</a>
+      </div>
+    </section>
+
+    <div class="card">
+      <h3>Что ты получишь:</h3>
+      <ul class="list">
+        <li><span class="ok"></span>Скан состояния — где именно теряется энергия (деньги, отношения, самореализация)</li>
+        <li><span class="ok"></span>Разворот из дефицита в изобилие — перепрошивка ключевого сценария</li>
+        <li><span class="ok"></span>Конкретные шаги и точки фокуса на ближайшие 7 дней</li>
+      </ul>
+      <p style="margin-top:20px">После оплаты появится форма для выбора удобного времени.</p>
+      <a class="btn-primary" href="https://buy.stripe.com/cNiaERda8fDt1nH5Jd1sQ02" target="_blank" rel="noopener">Оплатить</a>
+    </div>
+
+    <footer class="footer">
+      © 2025 Катерина Лебедева • <a href="mailto:kateryna.projects@gmail.com">kateryna.projects@gmail.com</a>
+    </footer>
   </div>
 </body>
 </html>
